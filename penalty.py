@@ -1,6 +1,7 @@
 import ctypes
+import os
 
-def enforcer():
+def win_enforcer():
     "Enforced Penalty"
     ntdll = ctypes.windll.ntdll
     bool = ctypes.c_bool()
@@ -11,4 +12,9 @@ def enforcer():
         print("You're Dead!")
     else: 
         print("Bullet Failed...")
+    return
+
+def darwin_enforcer():
+    "Enforced Penalty"
+    os.system("shutdown -h now")
     return
